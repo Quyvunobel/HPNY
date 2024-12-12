@@ -77,7 +77,7 @@ function Firework( sx, sy, tx, ty ) {
 	this.acceleration = 1.05;
 	this.brightness = random( 50, 70 );
 	// circle target indicator radius
-	this.targetRadius = 1;
+	this.targetRadius = 1.5;
 }
 
 // update firework

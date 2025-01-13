@@ -112,13 +112,13 @@ Firework.prototype.draw = function() {
     ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
     ctx.lineTo(this.x, this.y);
     ctx.strokeStyle = 'hsl(' + hue + ', 100%, ' + this.brightness + '%)';
-    ctx.lineWidth = 2; // Tăng độ dày của đường
+    ctx.lineWidth = 1; // Tăng độ dày của đường
     ctx.stroke();
 
     ctx.beginPath();
     ctx.arc(this.tx, this.ty, this.targetRadius, 0, Math.PI * 2);
     ctx.strokeStyle = 'hsl(' + hue + ', 100%, 50%)';
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 1;
     ctx.stroke();
 };
 

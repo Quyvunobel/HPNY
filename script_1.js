@@ -126,7 +126,7 @@ function Particle(x, y) {
     this.x = x;
     this.y = y;
     this.coordinates = [];
-    this.coordinateCount = 15; // Tăng từ 5 lên 8 để vệt sáng dài hơn
+    this.coordinateCount = 30; // Tăng từ 5 lên 8 để vệt sáng dài hơn
     while (this.coordinateCount--) {
         this.coordinates.push([this.x, this.y]);
     }

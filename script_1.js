@@ -85,7 +85,7 @@ Firework.prototype.update = function(index) {
     this.coordinates.pop();
     this.coordinates.unshift([this.x, this.y]);
 
-    if (this.targetRadius < 12) { // Tăng kích thước mục tiêu tối đa
+    if (this.targetRadius < 18) { // Tăng kích thước mục tiêu tối đa
         this.targetRadius += 0.4;
     } else {
         this.targetRadius = 1;
@@ -99,6 +99,7 @@ Firework.prototype.update = function(index) {
     if (this.distanceTraveled >= this.distanceToTarget) {
         createParticles(this.tx, this.ty);
         fireworks.splice(index, 1);
+	playExplosionSound();
     } else {
         this.x += vx;
         this.y += vy;
@@ -111,7 +112,7 @@ Firework.prototype.draw = function() {
     ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
     ctx.lineTo(this.x, this.y);
     ctx.strokeStyle = 'hsl(' + hue + ', 100%, ' + this.brightness + '%)';
-    ctx.lineWidth = 3; // Tăng độ dày của đường
+    ctx.lineWidth = 2; // Tăng độ dày của đường
     ctx.stroke();
 
     ctx.beginPath();
@@ -151,7 +152,7 @@ Particle.prototype.update = function( index ) {
 	// apply velocity
 	this.x += Math.cos( this.angle ) * this.speed;
 	this.y += Math.sin( this.angle ) * this.speed + this.gravity;
-	// fade out the particle
+	// fade out the paticle
 	this.alpha -= this.decay;
 	
 	// remove the particle once the alpha is low enough, based on the passed in index
@@ -252,6 +253,20 @@ canvas.addEventListener( 'mouseup', function( e ) {
 	e.preventDefault();
 	mousedown = false;
 });
+function playLaunchSound() {
+    var audio = new Audio('firework.mp3'); // Đảm bảo có file âm thanh firework-launch.mp3
+    audio.play();
+}
 
+
+function playExplosionSound() {
+    var audio = new Audio('firework.mp3'); 
+    audio.play();
+}
+
+// Gọi âm thanh khi pháo hoa bắt đầu
+Firework.prototype.start = function() {
+    playLaunchSound();
+}
 // fireworks start
 window.onload = loop;

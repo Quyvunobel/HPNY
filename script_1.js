@@ -135,7 +135,7 @@ function Particle(x, y) {
     this.friction = 0.93; // Giảm ma sát để hạt di chuyển lâu hơn
     this.gravity = 1.2; // Tăng lực hút để hiệu ứng rơi rõ hơn
     this.hue = random(hue - 40, hue + 40); // Tăng phạm vi màu sắc từ 20 lên 40
-    this.brightness = random(60, 90); // Tăng độ sáng tối đa
+    this.brightness = random(50,75); // Tăng độ sáng tối đa
     this.alpha = 1;
     this.decay = random(0.01, 0.02); // Giảm tốc độ mờ dần
 }

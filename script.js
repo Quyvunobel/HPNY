@@ -15,9 +15,18 @@ function countdown() {
 
   let addZeroes = (num) => (num < 10 ? `0${num}` : num);
 
+  // if (endTime < todayTime) {
+  //   clearInterval(i);
+  //   window.location.href = "index1.html";
   if (endTime < todayTime) {
-    clearInterval(i);
-    window.location.href = "index1.html";
+      clearInterval(i);
+      fetch("index1.html")
+          .then(res => res.text())
+          .then(html => {
+              document.body.innerHTML = html;
+          });
+  }
+  
   } else {
     let daysLeft = Math.floor(remainingTime / oneDay);
     let hrsLeft = Math.floor((remainingTime % oneDay) / oneHr);

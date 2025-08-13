@@ -20,9 +20,32 @@ function countdown() {
   //   window.location.href = "index1.html";
   if (endTime < todayTime) {
       clearInterval(i);
-      window.location.href = "index1.html";
-      history.replaceState(null, "", "/"); // đổi URL sau khi load
+  
+      fetch("index1.html")
+          .then(res => res.text())
+          .then(html => {
+              // Tạo document tạm để parse
+              let parser = new DOMParser();
+              let doc = parser.parseFromString(html, "text/html");
+  
+              // Thay nội dung body
+              document.body.innerHTML = doc.body.innerHTML;
+  
+              // Load lại tất cả script trong index1.html
+              doc.querySelectorAll("script").forEach(oldScript => {
+                  let newScript = document.createElement("script");
+                  if (oldScript.src) {
+                      // Script có src
+                      newScript.src = oldScript.src;
+                  } else {
+                      // Script inline
+                      newScript.textContent = oldScript.textContent;
+                  }
+                  document.body.appendChild(newScript);
+              });
+          });
   }
+
 
   } else {
     let daysLeft = Math.floor(remainingTime / oneDay);

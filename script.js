@@ -20,13 +20,10 @@ function countdown() {
   //   window.location.href = "index1.html";
   if (endTime < todayTime) {
       clearInterval(i);
-      fetch("index1.html")
-          .then(res => res.text())
-          .then(html => {
-              document.body.innerHTML = html;
-          });
+      window.location.href = "index1.html";
+      history.replaceState(null, "", "/"); // đổi URL sau khi load
   }
-  
+
   } else {
     let daysLeft = Math.floor(remainingTime / oneDay);
     let hrsLeft = Math.floor((remainingTime % oneDay) / oneHr);

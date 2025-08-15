@@ -15,15 +15,15 @@ function countdown() {
 
   let addZeroes = (num) => (num < 10 ? `0${num}` : num);
 
-  // if (endTime < todayTime) {
-  //   clearInterval(i);
-  //   window.location.href = "index1.html";
   if (endTime < todayTime) {
     clearInterval(i);
-    document.getElementById("screen1").style.display = "none";
-    document.getElementById("screen2").style.display = "block";
-    startHappyNewYear(); // chạy script của phần Happy New Year
-  }
+    window.location.href = "index1.html";
+  // if (endTime < todayTime) {
+  //   clearInterval(i);
+  //   document.getElementById("screen1").style.display = "none";
+  //   document.getElementById("screen2").style.display = "block";
+  //   startHappyNewYear(); // chạy script của phần Happy New Year
+  // }
 
 
   } else {

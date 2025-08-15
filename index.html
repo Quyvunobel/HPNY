@@ -1,73 +1,27 @@
-<!DOCTYPE html>
 <html lang="en"> 
-<head> 
-  <meta charset="UTF-8">
+ <head> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>HAPPY NEW YEAR</title> 
-
-  <!-- Font & CSS của countdown -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&amp;display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="style.css"> 
-
-  <!-- CSS của phần Happy New Year -->
-  <link rel="stylesheet" href="style_1.css">
-</head> 
-
-<body> 
-  <!-- Màn 1: Countdown -->
-  <div id="screen1" class="wrapper"> 
-    <div class="heading"> 
-      <h3>Countdown Till</h3> 
-      <h1>2026</h1> 
+ </head> 
+ <body> 
+  <div class="wrapper"> 
+   <div class="heading"> 
+    <h3>Countdown Till</h3> 
+    <h1>2026</h1> 
+   </div> 
+   <div class="countdown"> 
+    <div class="box"> <span class="num" id="day-box">00</span> <span class="text">Days</span> 
     </div> 
-    <div class="countdown"> 
-      <div class="box"> <span class="num" id="day-box">00</span> <span class="text">Days</span></div> 
-      <div class="box"> <span class="num" id="hr-box">00</span> <span class="text">Hours</span></div> 
-      <div class="box"> <span class="num" id="min-box">00</span> <span class="text">Minutes</span></div> 
-      <div class="box"> <span class="num" id="sec-box">00</span> <span class="text">Seconds</span></div> 
+    <div class="box"> <span class="num" id="hr-box">00</span> <span class="text">Hours</span> 
     </div> 
+    <div class="box"> <span class="num" id="min-box">00</span> <span class="text">Minutes</span> 
+    </div> 
+    <div class="box"> <span class="num" id="sec-box">00</span> <span class="text">Seconds</span> 
+    </div> 
+   </div> 
   </div> 
-
-  <!-- Màn 2: Happy New Year -->
-  <div id="screen2" style="display:none;">
-    <div id="info">
-      <p style="color:#12caea;"><b>#Ngocquynobel</b></p>
-    </div>
-    <section>
-      <div>
-        <span>
-          <h3>HAPPY</h3>
-          <h4></h4>
-        </span>
-      </div>
-      <div>
-        <span>
-          <h3>NEW YEAR</h3>
-          <h4></h4>
-        </span>
-      </div>
-    </section>
-    <section>
-      <div>
-        <h2>20</h2>
-      </div>
-      <div>
-        <h2>26</h2>
-      </div>
-    </section>
-    <canvas id="canvas">Don't load canvas.</canvas>
-  </div>
-
-  <!-- Script countdown -->
-  <script src="script.js"></script>
-
-  <!-- Script hiệu ứng Happy New Year (tạm ẩn, sẽ chạy khi đổi màn) -->
-  <script>
-    function startHappyNewYear() {
-      const script = document.createElement("script");
-      script.src = "script_1.js";
-      document.body.appendChild(script);
-    }
-  </script>
-</body>
+  <script src="script.js"></script> 
+ </body>
 </html>
